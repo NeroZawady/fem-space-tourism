@@ -1,0 +1,20 @@
+:root {
+  --color-main: #0b0d17;
+  --color-accent-1: #d0d6f9;
+  --color-accent-2: #ffffff;
+
+  font-family: 'Bellefair', serif;
+
+  --font-size--heading-1: 150px;
+  --font-size--heading-2: 100px;
+  --font-size--heading-3: 56px;
+  --font-size--heading-4: 32px;
+  --font-size--heading-5: 28px;
+  --font-size--sub-heading-1: 28px;
+  --font-size--sub-heading-2: 14px;
+  --font-size--nav-text: 16px;
+
+  --letter-spacing--heading-5: 4.75;
+  --letter-spacing--sub-heading-2: 2.35;
+  --letter-spacing--nav-text: 2.7;
+}
