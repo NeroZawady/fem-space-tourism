@@ -14,7 +14,106 @@
   --font-size--sub-heading-2: 14px;
   --font-size--nav-text: 16px;
 
-  --letter-spacing--heading-5: 4.75;
-  --letter-spacing--sub-heading-2: 2.35;
-  --letter-spacing--nav-text: 2.7;
+  --letter-spacing--heading-5: 4.75px;
+  --letter-spacing--sub-heading-2: 2.35px;
+  --letter-spacing--nav-text: 2.7px;
+}
+
+.header {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem 1.5rem;
+}
+
+.header__logo {
+}
+
+.header__menu-button {
+  z-index: 1;
+  min-width: 24px;
+  background: none;
+  border: none;
+}
+
+.header__menu-image {
+  width: 100%;
+}
+
+.header__nav {
+  position: fixed;
+  height: 100%;
+  top: 0;
+  right: 0;
+  padding: 5rem 6rem 0 2rem;
+  background-color: gray;
+}
+
+.header__list {
+  list-style: none;
+}
+
+.header__list-item {
+}
+
+.header__link {
+  color: var(--color-accent-2);
+}
+
+.header__number {
+  display: inline-block;
+  min-width: 3ch;
+  font-weight: bold;
+}
+
+/* General Classes */
+
+.heading-1 {
+  font-size: 150px;
+}
+
+.heading-2 {
+  font-size: 100px;
+}
+
+.heading-3 {
+  font-size: 56px;
+}
+
+.heading-4 {
+  font-size: 32px;
+}
+
+.heading-5 {
+  font-family: 'Barlow Condensed', monospace;
+  font-size: 28px;
+  letter-spacing: 4.75px;
+}
+
+.subheading-1 {
+  font-size: 28px;
+}
+
+.subheading-2 {
+  font-family: 'Barlow Condensed', monospace;
+  font-size: 14px;
+  letter-spacing: 2.35px;
+}
+
+.nav-text {
+  font-family: 'Barlow Condensed', monospace;
+  font-size: 16px;
+  letter-spacing: 2.7px;
+  /* color: var(--color-accent-1); */
+}
+
+.hidden {
+  display: none;
+}
+
+a,
+a:visited,
+a:link {
+  text-decoration: none;
 }
