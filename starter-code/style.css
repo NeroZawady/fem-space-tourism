@@ -109,7 +109,7 @@
 
 .body-text {
   color: var(--color-accent-1);
-  font-family: 'Bellefair', serif;
+  font-family: 'Barlow', serif;
   font-size: var(--font-size--body-text);
 }
 
@@ -226,4 +226,13 @@ a,
 a:visited,
 a:link {
   text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
 }
