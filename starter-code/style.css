@@ -135,7 +135,7 @@ Header Section
 
 .header {
   position: fixed;
-  z-index: 100;
+  z-index: 1;
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -149,7 +149,7 @@ Header Section
 }
 
 .header__menu-button {
-  z-index: 300;
+  z-index: 3;
   min-width: 24px;
   background: none;
   border: none;
@@ -167,11 +167,12 @@ Header Section
 
 .header__nav {
   position: fixed;
-  z-index: 200;
-  height: 100%;
+  z-index: 2;
   top: 0;
   right: 0;
-  padding: 5rem 6rem 0 2rem;
+  padding: 5rem 1rem 1rem 1rem;
+  width: 70%;
+  height: 100%;
   backdrop-filter: blur(30px);
 }
 
@@ -180,14 +181,21 @@ Header Section
 }
 
 .header__list > * + * {
-  margin-top: 1rem;
+  /* margin-top: 1rem; */
 }
 
 .header__list-item {
 }
 
 .header__link {
+  display: block;
+  padding: 1rem 0;
   color: hsl(var(--color-accent-2));
+}
+
+.header__link:hover,
+.header__link:focus {
+  box-shadow: 0 2px 0px hsl(var(--color-accent-2));
 }
 
 .header__number {
@@ -270,7 +278,7 @@ Destination Section
 .destination__background {
   width: 100%;
   position: absolute;
-  z-index: -2;
+  z-index: -1;
   top: 0;
   height: 100%;
 }
