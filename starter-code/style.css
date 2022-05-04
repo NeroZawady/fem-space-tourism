@@ -149,6 +149,7 @@ Header Section
 }
 
 .header__menu-button {
+  cursor: pointer;
   z-index: 3;
   min-width: 24px;
   background: none;
