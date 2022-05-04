@@ -18,20 +18,42 @@
     <title>Space Tourism</title>
   </head>
   <body>
+    <!-----------------------------------------------------------------------------------------------------------------
+      Header Section
+        * contains
+          * the website logo that links to the home section
+          * a sidebar button
+          * a sidebar
+        * is fixed to always stay on top
+    ------------------------------------------------------------------------------------------------------------------>
     <header class="header">
-      <img src="./assets/shared/logo.svg" alt="Space Tourism Logo" class="header__logo" />
+      <!-----------------------------------------------------------------------------------------------------------------
+        The website logo / home section link
+      ------------------------------------------------------------------------------------------------------------------>
+      <a href="#home" class="header__home-link"
+        ><img src="./assets/shared/logo.svg" alt="Space Tourism Logo" class="header__logo"
+      /></a>
+
+      <!-----------------------------------------------------------------------------------------------------------------
+        The sidebar button
+      ------------------------------------------------------------------------------------------------------------------>
       <button class="header__menu-button">
         <img
           src="./assets/shared/icon-hamburger.svg"
           alt="Menu button icon"
           class="header__menu-image"
         />
+
         <img
           src="./assets/shared/icon-close.svg"
           alt="Close menu button icon"
           class="header__menu-image hidden"
         />
       </button>
+
+      <!-----------------------------------------------------------------------------------------------------------------
+        The sidebar
+      ------------------------------------------------------------------------------------------------------------------>
       <nav class="header__nav hidden">
         <ol class="header__list">
           <li class="header__list-item">
@@ -39,16 +61,19 @@
               <span class="header__number">00</span> HOME
             </a>
           </li>
+
           <li class="header__nav-list-item">
-            <a href="#destinations" class="header__link nav-text">
+            <a href="#destination" class="header__link nav-text">
               <span class="header__number">01</span> DESTINATION
             </a>
           </li>
+
           <li class="header__nav-list-item">
             <a href="#crew" class="header__link nav-text">
               <span class="header__number">02</span> CREW
             </a>
           </li>
+
           <li class="header__nav-list-item">
             <a href="#technology" class="header__link nav-text">
               <span class="header__number">03</span> TECHNOLOGY
@@ -59,24 +84,228 @@
     </header>
 
     <main class="main">
-      <article class="home">
+      <!-----------------------------------------------------------------------------------------------------------------
+        Home Section
+          * contains
+            * a background image
+            * a heading
+            * a paragraph
+            * a button to go to the next section
+      ------------------------------------------------------------------------------------------------------------------>
+      <article class="home" id="home">
+        <!-----------------------------------------------------------------------------------------------------------------
+          The background image
+        ------------------------------------------------------------------------------------------------------------------>
         <img
           src="./assets/home/background-home-mobile.jpg"
-          alt="A photo of earth from space"
+          alt="An image of earth from space"
           class="home__image"
         />
+
         <div class="home__content">
           <div class="home__text">
+            <!-----------------------------------------------------------------------------------------------------------------
+              The heading
+            ------------------------------------------------------------------------------------------------------------------>
             <h1 class="home__heading nav-text">
-              SO, YOU WANT TO TRAVEL TO<br /><span class="heading-2">SPACE</span>
+              SO, YOU WANT TO TRAVEL TO<br /><span class="heading-1">SPACE</span>
             </h1>
+
+            <!-----------------------------------------------------------------------------------------------------------------
+              The paragraph
+            ------------------------------------------------------------------------------------------------------------------>
             <p class="home__body-text body-text">
               Let’s face it; if you want to go to space, you might as well genuinely go to outer
               space and not hover kind of on the edge of it. Well sit back, and relax because we’ll
               give you a truly out of this world experience!
             </p>
           </div>
-          <button class="home__explore-button">EXPLORE</button>
+
+          <!-----------------------------------------------------------------------------------------------------------------
+            The button
+          ------------------------------------------------------------------------------------------------------------------>
+          <a href="#destination" class="home__explore-button">EXPLORE</a>
+        </div>
+      </article>
+      <!-----------------------------------------------------------------------------------------------------------------
+        Destination Section
+          * contains
+            * a background image
+            * an introductory heading
+            * 4 images of the planets, only one of which is displayed
+            * a navigation menu with 4 buttons to navigate the planets' information
+            * 4 body texts, one for each planet, only one of each is displayed, each contains:
+              * the planet name as a heading
+              * a planet description as a paragraph
+            * a decorative line separator
+            * 4 information text blocks, one for each planet, only one of which is displayed, each contains
+              * distance information
+              * travel time information
+      ------------------------------------------------------------------------------------------------------------------>
+      <article class="destination" id="destination">
+        <!-----------------------------------------------------------------------------------------------------------------
+          The background image
+        ------------------------------------------------------------------------------------------------------------------>
+        <img
+          src="./assets/destination/background-destination-mobile.jpg"
+          alt="An image of empty space"
+          class="destination__background"
+        />
+
+        <div class="destination__content">
+          <!-----------------------------------------------------------------------------------------------------------------
+            The introductory heading
+          ------------------------------------------------------------------------------------------------------------------>
+          <h2 class="destination__heading heading-5">
+            <span class="destination__heading-number">01</span> PICK YOUR DESTINATION
+          </h2>
+          <!-----------------------------------------------------------------------------------------------------------------
+            The 4 planet images
+          ------------------------------------------------------------------------------------------------------------------>
+          <img
+            src="./assets/destination/image-moon.webp"
+            alt="An image of the Moon"
+            class="destination__planet-image destination__planet-image--selected"
+            data-planet="MOON"
+          />
+
+          <img
+            src="./assets/destination/image-mars.webp"
+            alt="An image of the planet Mars"
+            class="destination__planet-image"
+            data-planet="MARS"
+          />
+
+          <img
+            src="./assets/destination/image-europa.webp"
+            alt="An image of the moon Europa"
+            class="destination__planet-image"
+            data-planet="EUROPA"
+          />
+
+          <img
+            src="./assets/destination/image-titan.webp"
+            alt="An image of the moon Titan"
+            class="destination__planet-image"
+            data-planet="TITAN"
+          />
+          <!-----------------------------------------------------------------------------------------------------------------
+            The navigation menu
+          ------------------------------------------------------------------------------------------------------------------>
+          <nav class="destination__nav">
+            <ul class="destination__list">
+              <li class="destination__list-item">
+                <button
+                  class="destination__planet-button destination__planet-button--selected nav-text"
+                >
+                  MOON
+                </button>
+              </li>
+
+              <li class="destination__list-item">
+                <button class="destination__planet-button nav-text">MARS</button>
+              </li>
+
+              <li class="destination__list-item">
+                <button class="destination__planet-button nav-text">EUROPA</button>
+              </li>
+
+              <li class="destination__list-item">
+                <button class="destination__planet-button nav-text">TITAN</button>
+              </li>
+            </ul>
+          </nav>
+          <!-----------------------------------------------------------------------------------------------------------------
+            The body texts
+          ------------------------------------------------------------------------------------------------------------------>
+          <div
+            class="destination__content-text destination__content-text--selected"
+            data-planet="MOON"
+          >
+            <h3 class="destination__planet-name heading-2">MOON</h3>
+            <p class="destination__body-text body-text">
+              See our planet as you’ve never seen it before. A perfect relaxing trip away to help
+              regain perspective and come back refreshed. While you’re there, take in some history
+              by visiting the Luna 2 and Apollo 11 landing sites.
+            </p>
+          </div>
+
+          <div class="destination__content-text" data-planet="MARS">
+            <h3 class="destination__planet-name heading-2">MARS</h3>
+            <p class="destination__body-text body-text">
+              Don’t forget to pack your hiking boots. You’ll need them to tackle Olympus Mons, the
+              tallest planetary mountain in our solar system. It’s two and a half times the size of
+              Everest!
+            </p>
+          </div>
+
+          <div class="destination__content-text" data-planet="EUROPA">
+            <h3 class="destination__planet-name heading-2">EUROPA</h3>
+            <p class="destination__body-text body-text">
+              The smallest of the four Galilean moons orbiting Jupiter, Europa is a winter lover’s
+              dream. With an icy surface, it’s perfect for a bit of ice skating, curling, hockey, or
+              simple relaxation in your snug wintery cabin.
+            </p>
+          </div>
+
+          <div class="destination__content-text" data-planet="TITAN">
+            <h3 class="destination__planet-name heading-2">TITAN</h3>
+            <p class="destination__body-text body-text">
+              The only moon known to have a dense atmosphere other than Earth, Titan is a home away
+              from home (just a few hundred degrees colder!). As a bonus, you get striking views of
+              the Rings of Saturn.
+            </p>
+          </div>
+          <!-----------------------------------------------------------------------------------------------------------------
+            The decorative separator
+          ------------------------------------------------------------------------------------------------------------------>
+          <div class="destination__line-separator"></div>
+          <!-----------------------------------------------------------------------------------------------------------------
+            The information text blocks
+          ------------------------------------------------------------------------------------------------------------------>
+          <div class="destination__info destination__info--selected" data-planet="MOON">
+            <div class="destination__distance-container">
+              <div class="destination__distance-heading subheading-2">AVG. DISTANCE</div>
+              <div class="destination__distance-value subheading-1">384,400 KM</div>
+            </div>
+            <div class="destination__time-container">
+              <div class="destination__time-heading subheading-2">EST. TRAVEL TIME</div>
+              <div class="destination__time-value subheading-1">3 DAYS</div>
+            </div>
+          </div>
+
+          <div class="destination__info" data-planet="MARS">
+            <div class="destination__distance-container">
+              <div class="destination__distance-heading subheading-2">AVG. DISTANCE</div>
+              <div class="destination__distance-value subheading-1">225 MIL. KM</div>
+            </div>
+            <div class="destination__time-container">
+              <div class="destination__time-heading subheading-2">EST. TRAVEL TIME</div>
+              <div class="destination__time-value subheading-1">9 MONTHS</div>
+            </div>
+          </div>
+
+          <div class="destination__info" data-planet="EUROPA">
+            <div class="destination__distance-container">
+              <div class="destination__distance-heading subheading-2">AVG. DISTANCE</div>
+              <div class="destination__distance-value subheading-1">628 MIL. KM</div>
+            </div>
+            <div class="destination__time-container">
+              <div class="destination__time-heading subheading-2">EST. TRAVEL TIME</div>
+              <div class="destination__time-value subheading-1">3 YEARS</div>
+            </div>
+          </div>
+
+          <div class="destination__info" data-planet="TITAN">
+            <div class="destination__distance-container">
+              <div class="destination__distance-heading subheading-2">AVG. DISTANCE</div>
+              <div class="destination__distance-value subheading-1">1.6 BIL. KM</div>
+            </div>
+            <div class="destination__time-container">
+              <div class="destination__time-heading subheading-2">EST. TRAVEL TIME</div>
+              <div class="destination__time-value subheading-1">7 YEARS</div>
+            </div>
+          </div>
         </div>
       </article>
     </main>

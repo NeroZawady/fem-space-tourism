@@ -1,9 +1,17 @@
+/******************************************************************************
+Custom Properties
+******************************************************************************/
 :root {
-  --color-main: #0b0d17;
-  --color-accent-1: #d0d6f9;
-  --color-accent-2: #ffffff;
+  --color-main: 230, 35%, 7%;
+  --color-accent-1: 231, 77%, 90%;
+  --color-accent-2: 0, 0%, 100%;
+  --color-line-separator: 231, 15%, 26%;
+
+  --opacity-home-button: 0.1;
+  --opacity-nav-button: 0.5;
 
   font-family: 'Bellefair', serif;
+  color: hsl(var(--color-accent-2));
 
   --font-size--heading-1: 80px;
   --font-size--heading-2: 56px;
@@ -19,6 +27,10 @@
   --letter-spacing--sub-heading-2: 2.35px;
   --letter-spacing--nav-text: 2.35px;
 }
+
+/******************************************************************************
+Media Queries
+******************************************************************************/
 
 @media (min-width: 600px) {
   :root {
@@ -56,62 +68,70 @@
   }
 }
 
+/******************************************************************************
+Utility Classes
+******************************************************************************/
+
 .heading-1 {
-  color: var(--color-accent-2);
+  color: hsl(var(--color-accent-2));
   font-family: 'Bellefair', serif;
   font-size: var(--font-size--heading-1);
 }
 
 .heading-2 {
-  color: var(--color-accent-2);
+  color: hsl(var(--color-accent-2));
   font-family: 'Bellefair', serif;
   font-size: var(--font-size--heading-2);
 }
 
 .heading-3 {
-  color: var(--color-accent-2);
+  color: hsl(var(--color-accent-2));
   font-family: 'Bellefair', serif;
   font-size: 56px;
 }
 
 .heading-4 {
-  color: var(--color-accent-2);
+  color: hsl(var(--color-accent-2));
   font-family: 'Bellefair', serif;
   font-size: var(--font-size--heading-4);
 }
 
 .heading-5 {
-  color: var(--color-accent-2);
+  color: hsl(var(--color-accent-2));
   font-family: 'Barlow Condensed', monospace;
   font-size: var(--font-size--heading-5);
   letter-spacing: var(--letter-spacing--heading-5);
 }
 
 .subheading-1 {
-  color: var(--color-accent-2);
+  color: hsl(var(--color-accent-2));
   font-family: 'Bellefair', serif;
   font-size: var(--font-size--sub-heading-1);
 }
 
 .subheading-2 {
-  color: var(--color-accent-2);
+  color: hsl(var(--color-accent-1));
   font-family: 'Barlow Condensed', monospace;
   font-size: var(--font-size--sub-heading-2);
   letter-spacing: var(--letter-spacing--sub-heading-2);
 }
 
 .nav-text {
-  color: var(--color-accent-1);
+  color: hsl(var(--color-accent-1));
   font-family: 'Barlow Condensed', monospace;
   font-size: var(--font-size--nav-text);
   letter-spacing: var(--letter-spacing--nav-text);
 }
 
 .body-text {
-  color: var(--color-accent-1);
+  color: hsl(var(--color-accent-1));
   font-family: 'Barlow', serif;
   font-size: var(--font-size--body-text);
 }
+
+/******************************************************************************
+Header Section
+******************************************************************************/
 
 .header {
   position: fixed;
@@ -120,6 +140,9 @@
   justify-content: space-between;
   width: 100%;
   padding: 1rem 1.5rem;
+}
+
+.header__home-link {
 }
 
 .header__logo {
@@ -136,6 +159,12 @@
   width: 100%;
 }
 
+@supports not (backdrop-filter: blur(10px)) {
+  .header__nav {
+    background-color: gray;
+  }
+}
+
 .header__nav {
   position: fixed;
   z-index: 200;
@@ -150,11 +179,15 @@
   list-style: none;
 }
 
+.header__list > * + * {
+  margin-top: 1rem;
+}
+
 .header__list-item {
 }
 
 .header__link {
-  color: var(--color-accent-2);
+  color: hsl(var(--color-accent-2));
 }
 
 .header__number {
@@ -166,6 +199,10 @@
 .main {
 }
 
+/******************************************************************************
+Home Section
+******************************************************************************/
+
 .home {
   position: relative;
   display: flex;
@@ -175,20 +212,21 @@
 }
 
 .home__image {
+  position: absolute;
+  z-index: -1;
+  top: 0;
   width: 100%;
+  height: 100%;
 }
 
 .home__content {
-  position: absolute;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   align-items: center;
-  top: 0;
+  gap: 2rem;
   height: 100%;
   text-align: center;
-  padding: 1rem 2rem;
-  padding-top: 80px;
+  padding: 5rem 2rem 2rem 2rem;
   max-width: 100%;
 }
 
@@ -202,9 +240,13 @@
 }
 
 .home__explore-button {
-  background-color: var(--color-accent-2);
+  display: grid;
+  place-content: center;
+  padding: 2rem;
+  aspect-ratio: 1;
+  background-color: hsl(var(--color-accent-2));
   border: none;
-  color: var(--color-main);
+  color: hsl(var(--color-main));
   font-size: 20px;
   letter-spacing: 1.25px;
   width: 150px;
@@ -212,15 +254,137 @@
   border-radius: 100%;
 }
 
-.home__explore-button:hover {
-  outline: 2.5rem solid #24262f;
+.home__explore-button:hover,
+.home__explore-button:focus {
+  outline: 2.5rem solid hsl(var(--color-accent-2), var(--opacity-home-button));
 }
 
-/* General Classes */
+/******************************************************************************
+Destination Section
+******************************************************************************/
 
-.hidden {
+.destination {
+  position: relative;
+}
+
+.destination__background {
+  width: 100%;
+  position: absolute;
+  z-index: -2;
+  top: 0;
+  height: 100%;
+}
+
+.destination__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5rem 2rem 2rem 2rem;
+  gap: 2rem;
+}
+
+.destination__heading {
+}
+
+.destination__heading-number {
+  font-weight: bold;
+  opacity: 25%;
+}
+
+.destination__planet-image {
   display: none;
 }
+
+.destination__planet-image--selected {
+  display: block;
+}
+
+.destination__nav {
+  width: 100%;
+}
+
+.destination__list {
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+}
+
+.destination__list-item {
+}
+
+.destination__planet-button {
+  background: none;
+  border: none;
+}
+
+.destination__planet-button:not(.destination__planet-button--selected):hover,
+.destination__planet-button:not(.destination__planet-button--selected):focus {
+  padding-bottom: 5px;
+  border-bottom: 2px solid hsl(var(--color-accent-2), var(--opacity-nav-button));
+}
+
+.destination__planet-button--selected {
+  color: hsl(var(--color-accent-2));
+  padding-bottom: 5px;
+  border-bottom: 2px solid hsl(var(--color-accent-2));
+}
+
+.destination__content-text {
+  display: none;
+}
+
+.destination__content-text--selected {
+  display: block;
+}
+
+.destination__planet-name {
+  text-align: center;
+}
+
+.destination__body-text {
+  text-align: center;
+}
+
+.destination__line-separator {
+  height: 2px;
+  width: 100%;
+  background-color: hsl(var(--color-line-separator));
+}
+
+.destination__info {
+  display: none;
+}
+
+.destination__info--selected {
+  display: block;
+}
+
+.destination__distance-container {
+  margin-bottom: 1.5rem;
+}
+
+.destination__distance-heading {
+  text-align: center;
+}
+
+.destination__distance-value {
+  text-align: center;
+}
+
+.destination__time-container {
+}
+
+.destination__time-heading {
+  text-align: center;
+}
+
+.destination__time-value {
+  text-align: center;
+}
+
+/******************************************************************************
+Global Styles
+******************************************************************************/
 
 a,
 a:visited,
@@ -235,4 +399,16 @@ h4,
 h5,
 h6 {
   font-weight: normal;
+}
+
+p {
+  margin: 0;
+}
+
+/******************************************************************************
+Global Classes
+******************************************************************************/
+
+.hidden {
+  display: none;
 }
