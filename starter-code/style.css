@@ -5,10 +5,13 @@ Custom Properties
   --color-main: 230, 35%, 7%;
   --color-accent-1: 231, 77%, 90%;
   --color-accent-2: 0, 0%, 100%;
-  --color-line-separator: 231, 15%, 26%;
+  --color-accent-3: 231, 15%, 26%;
 
   --opacity-home-button: 0.1;
   --opacity-nav-button: 0.5;
+  --opacity-heading-number: 0.25;
+  --opacity-nav-dot: 0.175;
+  --opacity-nav-dot-hovered: 0.5;
 
   font-family: 'Bellefair', serif;
   color: hsl(var(--color-accent-2));
@@ -87,7 +90,7 @@ Utility Classes
 .heading-3 {
   color: hsl(var(--color-accent-2));
   font-family: 'Bellefair', serif;
-  font-size: 56px;
+  font-size: var(--font-size--heading-3);
 }
 
 .heading-4 {
@@ -220,7 +223,7 @@ Home Section
   align-items: center;
 }
 
-.home__image {
+.home__background {
   position: absolute;
   z-index: -1;
   top: 0;
@@ -277,10 +280,10 @@ Destination Section
 }
 
 .destination__background {
-  width: 100%;
   position: absolute;
   z-index: -1;
   top: 0;
+  width: 100%;
   height: 100%;
 }
 
@@ -357,7 +360,7 @@ Destination Section
 .destination__line-separator {
   height: 2px;
   width: 100%;
-  background-color: hsl(var(--color-line-separator));
+  background-color: hsl(var(--color-accent-3));
 }
 
 .destination__info {
@@ -390,6 +393,106 @@ Destination Section
 .destination__time-value {
   text-align: center;
 }
+
+/******************************************************************************
+Crew Section
+******************************************************************************/
+
+.crew {
+  position: relative;
+}
+
+.crew__background {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.crew__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 5rem 2rem 2rem 2rem;
+}
+
+.crew__heading {
+}
+
+.crew__heading-number {
+  font-weight: bold;
+  color: hsl(var(--color-accent-2), var(--opacity-heading-number));
+}
+
+.crew__crewmate-image-container {
+  border-bottom: 2px solid hsl(var(--color-accent-3));
+}
+
+.crew__crewmate-image {
+  display: none;
+  width: 70%;
+  margin: auto;
+}
+
+.crew__crewmate-image--selected {
+  display: block;
+}
+
+.crew__nav {
+}
+
+.crew__list {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.crew__list-item {
+}
+
+.crew__nav-button {
+  border: none;
+  padding: 7px;
+  border-radius: 50%;
+  background-color: hsl(var(--color-accent-2), var(--opacity-nav-dot));
+}
+
+.crew__nav-button:not(.crew__nav-button--selected):hover,
+.crew__nav-button:not(.crew__nav-button--selected):focus {
+  background-color: hsl(var(--color-accent-2), var(--opacity-nav-dot-hovered));
+}
+
+.crew__nav-button--selected {
+  background-color: hsl(var(--color-accent-2));
+}
+
+.crew__crewmate-heading {
+  display: none;
+  text-align: center;
+}
+
+.crew__crewmate-title {
+  color: hsl(var(--color-accent-2), 0.5);
+}
+
+.crew__crewmate-heading--selected {
+  display: block;
+}
+
+.crew__crewmate-description {
+  display: none;
+  text-align: center;
+}
+
+.crew__crewmate-description--selected {
+  display: block;
+}
+
+/******************************************************************************
+Technology Section
+******************************************************************************/
 
 /******************************************************************************
 Global Styles

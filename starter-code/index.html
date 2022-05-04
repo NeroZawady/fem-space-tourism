@@ -99,7 +99,7 @@
         <img
           src="./assets/home/background-home-mobile.jpg"
           alt="An image of earth from space"
-          class="home__image"
+          class="home__background"
         />
 
         <div class="home__content">
@@ -127,18 +127,19 @@
           <a href="#destination" class="home__explore-button">EXPLORE</a>
         </div>
       </article>
+
       <!-----------------------------------------------------------------------------------------------------------------
         Destination Section
           * contains
             * a background image
             * an introductory heading
-            * 4 images of the planets, only one of which is displayed
-            * a navigation menu with 4 buttons to navigate the planets' information
-            * 4 body texts, one for each planet, only one of each is displayed, each contains:
+            * images of the planets, only one of which is displayed
+            * a navigation menu with buttons to navigate the planets' information
+            * body texts, one for each planet, only one of each is displayed, each contains:
               * the planet name as a heading
               * a planet description as a paragraph
             * a decorative line separator
-            * 4 information text blocks, one for each planet, only one of which is displayed, each contains
+            * information text blocks, one for each planet, only one of which is displayed, each contains
               * distance information
               * travel time information
       ------------------------------------------------------------------------------------------------------------------>
@@ -160,7 +161,7 @@
             <span class="destination__heading-number">01</span> PICK YOUR DESTINATION
           </h2>
           <!-----------------------------------------------------------------------------------------------------------------
-            The 4 planet images
+            The planet images
           ------------------------------------------------------------------------------------------------------------------>
           <img
             src="./assets/destination/image-moon.webp"
@@ -308,6 +309,152 @@
           </div>
         </div>
       </article>
+
+      <!-----------------------------------------------------------------------------------------------------------------
+          Crew Section
+            * contains
+              * a background image
+              * an introductory heading
+              * crew images, only one of which is displayed
+              * a navigation menu with buttons (dots) to navigate the crew's information
+              * crew title and name headings, only one of which is displayed
+              * crew description paragraphs, only one of which is displayed
+        ------------------------------------------------------------------------------------------------------------------>
+      <article class="crew" id="crew">
+        <!-----------------------------------------------------------------------------------------------------------------
+          The background image
+        ------------------------------------------------------------------------------------------------------------------>
+        <img
+          src="./assets/crew/background-crew-mobile.jpg"
+          alt="An image of empty space"
+          class="crew__background"
+        />
+
+        <div class="crew__content">
+          <!-----------------------------------------------------------------------------------------------------------------
+            The introductory heading
+          ------------------------------------------------------------------------------------------------------------------>
+          <h2 class="crew__heading heading-5">
+            <span class="crew__heading-number">02</span> MEET YOUR CREW
+          </h2>
+          <!-----------------------------------------------------------------------------------------------------------------
+            The crew images
+          ------------------------------------------------------------------------------------------------------------------>
+          <div class="crew__crewmate-image-container">
+            <img
+              src="./assets/crew/image-douglas-hurley.webp"
+              alt="An image of Douglas Hurley with his fists in the air"
+              class="crew__crewmate-image crew__crewmate-image--selected"
+              data-crewmate="COMMANDER DOUGLAS HURLEY"
+            />
+            <img
+              src="./assets/crew/image-mark-shuttleworth.webp"
+              alt="An image of Mark Shuttleworth with a mic"
+              class="crew__crewmate-image"
+              data-crewmate="MISSION SPECIALIST MARK SHUTTLEWORTH"
+            />
+            <img
+              src="./assets/crew/image-victor-glover.webp"
+              alt="An image of Victor Glover smiling towards the camera"
+              class="crew__crewmate-image"
+              data-crewmate="PILOT VICTOR GLOVER"
+            />
+            <img
+              src="./assets/crew/image-anousheh-ansari.webp"
+              alt="An image of Anousheh Ansari with a mic"
+              class="crew__crewmate-image"
+              data-crewmate="FLIGHT ENGINEER ANOUSHEH ANSARI"
+            />
+          </div>
+          <!-----------------------------------------------------------------------------------------------------------------
+            The navigation menu
+          ------------------------------------------------------------------------------------------------------------------>
+          <nav class="crew__nav">
+            <ul class="crew__list">
+              <li class="crew__list-item">
+                <button
+                  class="crew__nav-button crew__nav-button--selected"
+                  data-crewmate="COMMANDER DOUGLAS HURLEY"
+                ></button>
+              </li>
+              <li class="crew__list-item">
+                <button
+                  class="crew__nav-button"
+                  data-crewmate="MISSION SPECIALIST MARK SHUTTLEWORTH"
+                ></button>
+              </li>
+              <li class="crew__list-item">
+                <button class="crew__nav-button" data-crewmate="PILOT VICTOR GLOVER"></button>
+              </li>
+              <li class="crew__list-item">
+                <button
+                  class="crew__nav-button"
+                  data-crewmate="FLIGHT ENGINEER ANOUSHEH ANSARI"
+                ></button>
+              </li>
+            </ul>
+          </nav>
+          <!-----------------------------------------------------------------------------------------------------------------
+            The crew titles and names
+          ------------------------------------------------------------------------------------------------------------------>
+          <h3
+            class="crew__crewmate-heading crew__crewmate-heading--selected heading-3"
+            data-crewmate="COMMANDER DOUGLAS HURLEY"
+          >
+            <span class="crew__crewmate-title heading-4">COMMANDER</span><br />DOUGLAS HURLEY
+          </h3>
+          <h3
+            class="crew__crewmate-heading heading-3"
+            data-crewmate="MISSION SPECIALIST MARK SHUTTLEWORTH"
+          >
+            <span class="crew__crewmate-title heading-4">MISSION SPECIALIST</span><br />MARK
+            SHUTTLEWORTH
+          </h3>
+          <h3 class="crew__crewmate-heading heading-3" data-crewmate="PILOT VICTOR GLOVER">
+            <span class="crew__crewmate-title heading-4">PILOT</span><br />VICTOR GLOVER
+          </h3>
+          <h3
+            class="crew__crewmate-heading heading-3"
+            data-crewmate="FLIGHT ENGINEER ANOUSHEH ANSARI"
+          >
+            <span class="crew__crewmate-title heading-4">FLIGHT ENGINEER</span><br />ANOUSHEH ANSARI
+          </h3>
+          <!-----------------------------------------------------------------------------------------------------------------
+            The crew description paragraphs
+          ------------------------------------------------------------------------------------------------------------------>
+          <p
+            class="crew__crewmate-description crew__crewmate-description--selected body-text"
+            data-crewmate="COMMANDER DOUGLAS HURLEY"
+          >
+            Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA
+            astronaut. He launched into space for the third time as commander of Crew Dragon Demo-2.
+          </p>
+          <p
+            class="crew__crewmate-description body-text"
+            data-crewmate="MISSION SPECIALIST MARK SHUTTLEWORTH"
+          >
+            Mark Richard Shuttleworth is the founder and CEO of Canonical, the company behind the
+            Linux-based Ubuntu operating system. Shuttleworth became the first South African to
+            travel to space as a space tourist.
+          </p>
+          <p class="crew__crewmate-description body-text" data-crewmate="PILOT VICTOR GLOVER">
+            Pilot on the first operational flight of the SpaceX Crew Dragon to the International
+            Space Station. Glover is a commander in the U.S. Navy where he pilots an F/A-18.He was a
+            crew member of Expedition 64, and served as a station systems flight engineer.
+          </p>
+          <p
+            class="crew__crewmate-description body-text"
+            data-crewmate="FLIGHT ENGINEER ANOUSHEH ANSARI"
+          >
+            Anousheh Ansari is an Iranian American engineer and co-founder of Prodea Systems. Ansari
+            was the fourth self-funded space tourist, the first self-funded woman to fly to the ISS,
+            and the first Iranian in space.
+          </p>
+        </div>
+      </article>
     </main>
   </body>
 </html>
+<!-----------------------------------------------------------------------------------------------------------------
+  
+------------------------------------------------------------------------------------------------------------------>
