@@ -1,33 +1,33 @@
-const headerMenuButton = document.querySelector('.header__menu-button');
-const headerNav = document.querySelector('.header__nav');
-headerMenuButton.addEventListener('click', () => {
-  headerNav.classList.toggle('hidden');
-  headerMenuButton.children[0].classList.toggle('hidden');
-  headerMenuButton.children[1].classList.toggle('hidden');
+const sidebarButton = document.querySelector('.header__menu-button');
+const sidebar = document.querySelector('.header__nav');
+sidebarButton.addEventListener('click', () => {
+  sidebar.classList.toggle('hidden');
+  sidebarButton.children[0].classList.toggle('hidden');
+  sidebarButton.children[1].classList.toggle('hidden');
 });
 
-const headerLinks = document.querySelectorAll('.header__link');
-headerLinks.forEach((headerLink) =>
-  headerLink.addEventListener('click', () => {
-    headerMenuButton.click();
+const sidebarLinks = document.querySelectorAll('.header__link');
+sidebarLinks.forEach((sidebarLink) =>
+  sidebarLink.addEventListener('click', () => {
+    sidebarButton.click();
   })
 );
 
-const destination__planetButtons = document.querySelectorAll('.destination__planet-button');
-destination__planetButtons.forEach((planetButton) =>
-  planetButton.addEventListener('click', () => {
-    if (!planetButton.classList.contains('destination__planet-button--selected')) {
+const destinationButtons = document.querySelectorAll('.destination__planet-button');
+destinationButtons.forEach((destinationButton) =>
+  destinationButton.addEventListener('click', () => {
+    if (!destinationButton.classList.contains('destination__planet-button--selected')) {
       document
         .querySelector('.destination__planet-button--selected')
         .classList.remove('destination__planet-button--selected');
-      planetButton.classList.add('destination__planet-button--selected');
+      destinationButton.classList.add('destination__planet-button--selected');
 
       document
         .querySelector('.destination__planet-image--selected')
         .classList.remove('destination__planet-image--selected');
 
       document
-        .querySelector(`.destination__planet-image[data-planet="${planetButton.innerText}"]`)
+        .querySelector(`.destination__planet-image[data-planet="${destinationButton.innerText}"]`)
         .classList.add('destination__planet-image--selected');
 
       document
@@ -35,7 +35,7 @@ destination__planetButtons.forEach((planetButton) =>
         .classList.remove('destination__content-text--selected');
 
       document
-        .querySelector(`.destination__content-text[data-planet="${planetButton.innerText}"]`)
+        .querySelector(`.destination__content-text[data-planet="${destinationButton.innerText}"]`)
         .classList.add('destination__content-text--selected');
 
       document
@@ -43,20 +43,20 @@ destination__planetButtons.forEach((planetButton) =>
         .classList.remove('destination__info--selected');
 
       document
-        .querySelector(`.destination__info[data-planet="${planetButton.innerText}"]`)
+        .querySelector(`.destination__info[data-planet="${destinationButton.innerText}"]`)
         .classList.add('destination__info--selected');
     }
   })
 );
 
-const navDotsButtons = document.querySelectorAll('.crew__nav-button');
-navDotsButtons.forEach((button) =>
-  button.addEventListener('click', () => {
-    if (!button.classList.contains('destination__planet-button--selected')) {
+const crewButtons = document.querySelectorAll('.crew__nav-button');
+crewButtons.forEach((crewButton) =>
+  crewButton.addEventListener('click', () => {
+    if (!crewButton.classList.contains('crew__nav-button--selected')) {
       document
         .querySelector('.crew__nav-button--selected')
         .classList.remove('crew__nav-button--selected');
-      button.classList.add('crew__nav-button--selected');
+      crewButton.classList.add('crew__nav-button--selected');
 
       document
         .querySelector('.crew__crewmate-image--selected')
@@ -64,7 +64,7 @@ navDotsButtons.forEach((button) =>
 
       document
         .querySelector(
-          `.crew__crewmate-image[data-crewmate="${button.getAttribute('data-crewmate')}"]`
+          `.crew__crewmate-image[data-crewmate="${crewButton.getAttribute('data-crewmate')}"]`
         )
         .classList.add('crew__crewmate-image--selected');
 
@@ -74,7 +74,7 @@ navDotsButtons.forEach((button) =>
 
       document
         .querySelector(
-          `.crew__crewmate-heading[data-crewmate="${button.getAttribute('data-crewmate')}"`
+          `.crew__crewmate-heading[data-crewmate="${crewButton.getAttribute('data-crewmate')}"`
         )
         .classList.add('crew__crewmate-heading--selected');
 
@@ -84,9 +84,57 @@ navDotsButtons.forEach((button) =>
 
       document
         .querySelector(
-          `.crew__crewmate-description[data-crewmate="${button.getAttribute('data-crewmate')}"`
+          `.crew__crewmate-description[data-crewmate="${crewButton.getAttribute('data-crewmate')}"`
         )
         .classList.add('crew__crewmate-description--selected');
+    }
+  })
+);
+
+const technologyButtons = document.querySelectorAll('.technology__nav-button');
+technologyButtons.forEach((technologyButton) =>
+  technologyButton.addEventListener('click', () => {
+    if (!technologyButton.classList.contains('technology__nav-button--selected')) {
+      document
+        .querySelector('.technology__nav-button--selected')
+        .classList.remove('technology__nav-button--selected');
+      technologyButton.classList.add('technology__nav-button--selected');
+
+      document
+        .querySelector('.technology__image--selected')
+        .classList.remove('technology__image--selected');
+
+      document
+        .querySelector(
+          `.technology__image[data-technology="${technologyButton.getAttribute(
+            'data-technology'
+          )}"]`
+        )
+        .classList.add('technology__image--selected');
+
+      document
+        .querySelector('.technology__tech-heading--selected')
+        .classList.remove('technology__tech-heading--selected');
+
+      document
+        .querySelector(
+          `.technology__tech-heading[data-technology="${technologyButton.getAttribute(
+            'data-technology'
+          )}"`
+        )
+        .classList.add('technology__tech-heading--selected');
+
+      document
+        .querySelector('.technology__description--selected')
+        .classList.remove('technology__description--selected');
+
+      document
+        .querySelector(
+          `.technology__description[data-technology="${technologyButton.getAttribute(
+            'data-technology'
+          )}"`
+        )
+        .classList.add('technology__description--selected');
     }
   })
 );

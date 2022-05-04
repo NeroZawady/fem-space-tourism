@@ -452,6 +452,121 @@
           </p>
         </div>
       </article>
+
+      <!-----------------------------------------------------------------------------------------------------------------
+        Technology Section
+          * contains
+            * a background image
+            * an introductory heading
+            * technology images, only one of which is displayed
+            * a navigation menu with buttons to navigate the technologies' information
+            * technology name headings, only one of which is displayed
+            * technology description paragraphs, only one of which is displayed
+      ------------------------------------------------------------------------------------------------------------------>
+      <article class="technology" id="technology">
+        <!-----------------------------------------------------------------------------------------------------------------
+          The background image
+        ------------------------------------------------------------------------------------------------------------------>
+        <img
+          src="./assets/technology/background-technology-mobile.jpg"
+          alt="An image of empty space"
+          class="technology__background"
+        />
+
+        <div class="technology__content">
+          <!-----------------------------------------------------------------------------------------------------------------
+            The introductory heading
+          ------------------------------------------------------------------------------------------------------------------>
+          <h2 class="technology__heading heading-5">
+            <span class="technology__heading-number">03</span> SPACE LAUNCH 101
+          </h2>
+
+          <!-----------------------------------------------------------------------------------------------------------------
+            The technology images
+          ------------------------------------------------------------------------------------------------------------------>
+          <img
+            src="./assets/technology/image-launch-vehicle-portrait.jpg"
+            alt="An image of a space vehicle launching"
+            class="technology__image technology__image--selected"
+            data-technology="launch vehicle"
+          /><img
+            src="./assets/technology/image-spaceport-portrait.jpg"
+            alt="An image of a person working on a space vehicle"
+            class="technology__image"
+            data-technology="spaceport"
+          /><img
+            src="./assets/technology/image-space-capsule-portrait.jpg"
+            alt="An image of a space capsule in space"
+            class="technology__image"
+            data-technology="space capsule"
+          />
+
+          <!-----------------------------------------------------------------------------------------------------------------
+            The navigation menu
+          ------------------------------------------------------------------------------------------------------------------>
+          <nav class="technology__nav">
+            <ul class="technology__list">
+              <li class="technology__list-item">
+                <button
+                  class="technology__nav-button technology__nav-button--selected"
+                  data-technology="launch vehicle"
+                >
+                  1
+                </button>
+              </li>
+              <li class="technology__list-item">
+                <button class="technology__nav-button" data-technology="spaceport">2</button>
+              </li>
+              <li class="technology__list-item">
+                <button class="technology__nav-button" data-technology="space capsule">3</button>
+              </li>
+            </ul>
+          </nav>
+
+          <!-----------------------------------------------------------------------------------------------------------------
+            The technology headings
+          ------------------------------------------------------------------------------------------------------------------>
+          <h3
+            class="technology__tech-heading technology__tech-heading--selected heading-3"
+            data-technology="launch vehicle"
+          >
+            <span class="technology__heading-title subheading-2">THE TECHNOLOGY ...</span
+            ><br />LAUNCH VEHICLE
+          </h3>
+          <h3 class="technology__tech-heading heading-3" data-technology="spaceport">
+            <span class="technology__heading-title subheading-2">THE TECHNOLOGY ...</span
+            ><br />SPACEPORT
+          </h3>
+          <h3 class="technology__tech-heading heading-3" data-technology="space capsule">
+            <span class="technology__heading-title subheading-2">THE TECHNOLOGY ...</span
+            ><br />SPACE CAPSULE
+          </h3>
+
+          <!-----------------------------------------------------------------------------------------------------------------
+            The technology descriptions
+          ------------------------------------------------------------------------------------------------------------------>
+          <p
+            class="technology__description technology__description--selected body-text"
+            data-technology="launch vehicle"
+          >
+            A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a payload
+            from Earth's surface to space, usually to Earth orbit or beyond. Our WEB-X carrier
+            rocket is the most powerful in operation. Standing 150 metres tall, it's quite an
+            awe-inspiring sight on the launch pad!
+          </p>
+          <p class="technology__description body-text" data-technology="spaceport">
+            A spaceport or cosmodrome is a site for launching (or receiving) spacecraft, by analogy
+            to the seaport for ships or airport for aircraft. Based in the famous Cape Canaveral,
+            our spaceport is ideally situated to take advantage of the Earth’s rotation for launch.
+          </p>
+          <p class="technology__description body-text" data-technology="space capsule">
+            A space capsule is an often-crewed spacecraft that uses a blunt-body reentry capsule to
+            reenter the Earth's atmosphere without wings. Our capsule is where you'll spend your
+            time during the flight. It includes a space gym, cinema, and plenty of other activities
+            to keep you entertained.
+          </p>
+        </div>
+      </article>
     </main>
   </body>
 </html>
