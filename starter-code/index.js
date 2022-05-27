@@ -1,15 +1,19 @@
 const sidebarButton = document.querySelector('.header__menu-button');
-const sidebar = document.querySelector('.header__nav');
 sidebarButton.addEventListener('click', () => {
-  sidebar.classList.toggle('hidden');
+  document.querySelector('.header__nav').classList.toggle('hidden');
   sidebarButton.children[0].classList.toggle('hidden');
   sidebarButton.children[1].classList.toggle('hidden');
 });
 
-const sidebarLinks = document.querySelectorAll('.header__link');
-sidebarLinks.forEach((sidebarLink) =>
-  sidebarLink.addEventListener('click', () => {
-    sidebarButton.click();
+const headerLinks = document.querySelectorAll('.header__link');
+headerLinks.forEach((headerLink) =>
+  headerLink.addEventListener('click', () => {
+    document.querySelector('.header__link--selected').classList.remove('header__link--selected');
+    headerLink.classList.add('header__link--selected');
+
+    if (!document.querySelector('.header__nav').classList.contains('hidden')) {
+      sidebarButton.click();
+    }
   })
 );
 
@@ -138,3 +142,8 @@ technologyButtons.forEach((technologyButton) =>
     }
   })
 );
+
+const homeLink = document.querySelector('.header__home-link');
+homeLink.addEventListener('click', () => {
+  headerLinks[0].click();
+});
